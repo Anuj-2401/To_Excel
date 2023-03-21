@@ -1,0 +1,8 @@
+easyocr==1.6.2
+imutils==0.5.4
+numpy==1.24.2
+opencv_python==4.7.0.72
+pandas==1.5.3
+Pillow==9.4.0
+streamlit==1.20.0
+XlsxWriter==3.0.9
