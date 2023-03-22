@@ -3,12 +3,13 @@ import easyocr
 import numpy as np
 import math
 import io
-import xlsxwriter
-import imutils
+#import xlsxwriter
+#import imutils
 import pandas as pd
-from PIL import Image
+#from PIL import Image
 import cv2
 reader = easyocr.Reader(['en'])
+converted = False
 st.title("Hello")
 @st.cache_data
 def convert_image(file):
@@ -83,5 +84,7 @@ if file is None:
 else:
     st.text("File uploaded successfully!")
     df_xlsx = convert_image(file)
+    converted = True
   
-st.download_button(label='Download XlSX',data = df_xlsx,file_name='extracted.xlsx',mime="application/vnd.ms-excel")
+if converted == True:
+    st.download_button(label='Download XlSX',data = df_xlsx,file_name='extracted.xlsx',mime="application/vnd.ms-excel")
