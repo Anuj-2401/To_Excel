@@ -71,7 +71,7 @@ def convert_image(file):
             data.append(newrow)
             row.clear()
     df = pd.DataFrame(data)
-    df.drop(df.index[0])
+    
     buffer = io.BytesIO()
     with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
         df.to_excel(writer, sheet_name='Sheet1',index=False,header=False)
